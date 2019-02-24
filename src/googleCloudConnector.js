@@ -59,7 +59,8 @@ function initRecording() {
 	};
 
 	navigator.mediaDevices.getUserMedia(constraints)
-		.then(handleSuccess);
+		.then(handleSuccess)
+		.catch(e => console.error(e));
 
 }
 

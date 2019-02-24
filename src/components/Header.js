@@ -28,7 +28,7 @@ export default class Header extends Component {
       <header id="home">
          <nav id="nav-wrap">
             <a className="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-          <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+            <a className="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
             <ul id="nav" className="nav">
             <li onClick={() => googleSdk.startRecording(this.gotoAction)} className="fa-2x fa-mic"><i className="fa fa-microphone" style={{color:'white'}}/></li>
                <li className="current"><a className="smoothscroll" href="#home">Home</a></li>
