@@ -37,6 +37,7 @@ export default class About extends Component {
        					   </p>
                   </div>
                </div>
+               <a className="button" href={resumeData.resumeFile} download><i class="fa fa-download"></i> Download Resume</a>
             </div>
          </div>
       </section>

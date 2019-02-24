@@ -1,13 +1,13 @@
 .html5 {
-    width: 50%;
+    width: 65%;
     -moz-animation: html5 2s ease;
     -webkit-animation: html5 2s ease;
 }
 
-.node {
-    width: 50%;
-    -moz-animation: node 2s ease;
-    -webkit-animation: node 2s ease;
+.node-js {
+    width: 60%;
+    -moz-animation: node-js 2s ease;
+    -webkit-animation: node-js 2s ease;
 }
 .csharp {
     width: 90%;
@@ -19,28 +19,78 @@
     -moz-animation: html5 2s ease;
     -webkit-animation: html5 2s ease;
 }
-.html5 {
-    width: 50%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease;
+.react-js {
+    width: 85%;
+    -moz-animation: react-js 2s ease;
+    -webkit-animation: react-js 2s ease;
 }
-.html5 {
-    width: 50%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease;
+.rabbitmq {
+    width: 60%;
+    -moz-animation: rabbitmq 2s ease;
+    -webkit-animation: rabbitmq 2s ease;
 }
-.html5 {
-    width: 50%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease;
+.vue {
+    width: 45%;
+    -moz-animation: vue 2s ease;
+    -webkit-animation: vue 2s ease;
 }
-.html5 {
-    width: 50%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease;
+.net-core {
+    width: 75%;
+    -moz-animation: net-core 2s ease;
+    -webkit-animation: net-core 2s ease;
 }
-.html5 {
+.net {
+    width: 80%;
+    -moz-animation: net 2s ease;
+    -webkit-animation: net 2s ease;
+}
+.sql {
+    width: 67%;
+    -moz-animation: sql 2s ease;
+    -webkit-animation: sql 2s ease;
+}
+.angularjs {
+    width: 60%;
+    -moz-animation: angularjs 2s ease;
+    -webkit-animation: angularjs 2s ease;
+}
+.angular-7 {
     width: 50%;
-    -moz-animation: html5 2s ease;
-    -webkit-animation: html5 2s ease;
+    -moz-animation: angular-7 2s ease;
+    -webkit-animation: angular-7 2s ease;
+}
+.mongodb {
+    width: 50%;
+    -moz-animation: mongodb 2s ease;
+    -webkit-animation: mongodb 2s ease;
+}
+.ef {
+    width: 60%;
+    -moz-animation: ef 2s ease;
+    -webkit-animation: ef 2s ease;
+}
+.android {
+    width: 40%;
+    -moz-animation: android 2s ease;
+    -webkit-animation: android 2s ease;
+}
+.swift {
+    width: 30%;
+    -moz-animation: swift 2s ease;
+    -webkit-animation: swift 2s ease;
+}
+.aws {
+    width: 30%;
+    -moz-animation: aws 2s ease;
+    -webkit-animation: aws 2s ease;
+}
+.xamarin {
+    width: 68%;
+    -moz-animation: xamarin 2s ease;
+    -webkit-animation: xamarin 2s ease;
+}
+.react-native {
+    width: 32%;
+    -moz-animation: react-native 2s ease;
+    -webkit-animation: react-native 2s ease;
 }
