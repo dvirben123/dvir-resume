@@ -1,5 +1,22 @@
 import React, { Component } from 'react';
+var googleSdk = require('../googleCloudConnector');
+
 export default class About extends Component {
+
+   componentDidMount(){
+   }
+
+   mapTextToAction = (text) => {
+      if(text.toLowerCase().includes("download")){
+         this.downloadFile();
+      }
+      console.log("Text", text);
+   }
+
+    downloadFile = () => {
+      document.getElementById('downloaded').click();
+    }
+
   render() {
     let resumeData = this.props.resumeData;
     return (
@@ -36,8 +53,8 @@ export default class About extends Component {
                     <span>{resumeData.website}</span>
        					   </p>
                   </div>
-               </div>
-               <a className="button" href={resumeData.resumeFile} download><i class="fa fa-download"></i> Download Resume</a>
+               </div>               
+               <a id="downloaded" className="button" href={resumeData.resumeFile} download><i className="fa fa-download"></i> Download Resume</a>
             </div>
          </div>
       </section>

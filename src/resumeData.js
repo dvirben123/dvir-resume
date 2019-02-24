@@ -21,7 +21,7 @@ let resumeData = {
           "className":"fa fa-skype"
         },
         {
-          "name":"skype",
+          "name":"facebook",
           "url":"https://www.facebook.com/public/Dvir-Ben-Ishay",
           "className":"fa fa-facebook"
         }
