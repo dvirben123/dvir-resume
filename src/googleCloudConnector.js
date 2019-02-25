@@ -9,7 +9,7 @@
 
 import openSocket from 'socket.io-client';
 var nlp = require('compromise')
-const socket = openSocket('http://localhost:1337');
+const socket = openSocket('https://dvirbi.com:1337');
 
 //================= CONFIG =================
 // Stream Audio
@@ -59,8 +59,11 @@ function initRecording() {
 	};
 
 	navigator.mediaDevices.getUserMedia(constraints)
-		.then(handleSuccess)
-		.catch(e => console.error(e));
+	.then(handleSuccess)
+		// .catch(e => console.error(e));
+	// navigator.getUserMedia(constraints, handleSuccess, (e) => console.log("Failed to get user media", e));
+		// .then(handleSuccess)
+		// .catch(e => console.error(e));
 
 }
 
