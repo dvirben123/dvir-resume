@@ -9,7 +9,11 @@
 
 import openSocket from 'socket.io-client';
 var nlp = require('compromise')
+<<<<<<< HEAD
 const socket = openSocket('https://dvirbi.com:1337');
+=======
+const socket = openSocket('https://127.0.0.1:1337');
+>>>>>>> a36d918b6a32832c9d44084cab9ff5b082385da0
 
 //================= CONFIG =================
 // Stream Audio
