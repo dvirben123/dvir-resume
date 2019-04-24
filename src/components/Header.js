@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import ReactPlayer from 'react-player'
+import style from './Header.css';
+import Typing from 'react-typing-animation';
 const googleSdk = require('../googleCloudConnector');
 
 export default class Header extends Component {
@@ -7,8 +10,15 @@ export default class Header extends Component {
     super();
 
     this.state = {
-      recording: false
+      recording: false,
+      showMovie: true
     }
+
+    setTimeout(() => {
+      this.setState({
+        showMovie: false
+      });
+    }, 5000);
   }
 
 
@@ -16,6 +26,8 @@ export default class Header extends Component {
     this.setState({recording:true});
     googleSdk.startRecording(this.gotoAction)
   }
+
+  
 
   gotoAction = (text) => {
     console.log("TEXT HEADER",text);
@@ -75,9 +87,24 @@ export default class Header extends Component {
             </ul>
          </nav>
 
+          {
+            this.state.showMovie &&
+            <div style={{width:'100%',  position: 'absolute', top: '0px'}} className={!this.state.showMovie?'fadeOut':'fadeIn'} >
+                    <ReactPlayer url='video/dragon.mp4' width='100%' height='100%' playing />
+                  </div>
+          }
+        
+
          <div className="row banner">
             <div className="banner-text">
-               <h1 className="responsive-headline">I am {resumeData.name}.</h1>
+            {
+              !this.state.showMovie && 
+            <Typing>
+              <h1 className="responsive-headline">I am {resumeData.name}.</h1>
+            </Typing>
+            }
+            
+               
                <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a {resumeData.role}.{resumeData.roleDescription}
                </h3>
                <h3 style={{color:'#F06000', fontFamily:'sans-serif ', fontWeight: 'bold'}}>You can play with voice commands, just click and say 'download' or 'go to about': </h3><li style={{display:'block'}} onClick={() => this.start() } className="fa-3x fa-mic"><i className="fa fa-microphone" style={{color: this.state.recording ? 'red':'white'}}/></li>
