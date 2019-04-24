@@ -58,9 +58,12 @@ function initRecording() {
 		};
 	};
 
-	navigator.mediaDevices.getUserMedia(constraints)
-	.then(handleSuccess)
-		// .catch(e => console.error(e));
+	navigator.getUserMedia(constraints, 
+		(a) => {console.log("success " + a); handleSuccess(a)}, 
+		(e) => {console.log("error" + e); callbackResult("error: " + e.message)})
+	// navigator.mediaDevices.getUserMedia(constraints)
+	// .then(handleSuccess)
+    // .catch(e => console.error(e));
 	// navigator.getUserMedia(constraints, handleSuccess, (e) => console.log("Failed to get user media", e));
 		// .then(handleSuccess)
 		// .catch(e => console.error(e));

@@ -21,6 +21,12 @@ export default class Header extends Component {
     console.log("TEXT HEADER",text);
     this.setState({recording:false});
 
+    if(text.includes("error")) {
+      alert("Your microphone is off or not available");
+      return;
+    }
+    
+
     var gotoArray = [];
     if(text.includes("goto")){
       gotoArray = text.split("goto");
