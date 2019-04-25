@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import ReactPlayer from 'react-player'
 import style from './Header.css';
 import Typing from 'react-typing-animation';
+import Typist from 'react-typist';
+import MediaQuery from 'react-responsive';
+
 const googleSdk = require('../googleCloudConnector');
 
 export default class Header extends Component {
@@ -68,6 +70,28 @@ export default class Header extends Component {
       })
   }
 
+  _renderTitle = () => {
+    const data = <Typist>
+                    <h1 className="responsive-headline">I am {this.props.resumeData.name}.</h1>
+                    <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a {this.props.resumeData.role}.{this.props.resumeData.roleDescription}
+                    </h3>
+                  </Typist>
+    const t = <MediaQuery minDeviceWidth={1224}>
+    {(matches) => {
+      if (matches && !this.state.showMovie) {                   
+        return data;
+      } 
+      if (!matches) {                    
+          return data;
+      } else {
+        return <div></div>
+      }
+    }}
+  </MediaQuery>
+
+  return t;
+  }
+
   render() {
     let resumeData = this.props.resumeData;
     return (
@@ -86,28 +110,26 @@ export default class Header extends Component {
             <li><a id="contact123" className="smoothscroll" href="#contact">Contact </a></li>
             </ul>
          </nav>
-
+         <MediaQuery query="(min-device-width: 1224px)">
           {
             this.state.showMovie &&
             <div style={{width:'100%',  position: 'absolute', top: '0px'}} className={!this.state.showMovie?'fadeOut':'fadeIn'} >
-                    <ReactPlayer url='video/dragon.mp4' width='100%' height='100%' playing />
-                  </div>
+              <video autoPlay width="100%" height="100%">
+                <source src="video/dragon.mp4" type="video/mp4"/>
+                Your browser does not support the video tag.
+              </video>
+            </div>
           }
+         </MediaQuery>
+          
         
 
          <div className="row banner">
             <div className="banner-text">
-            {
-              !this.state.showMovie && 
-            <Typing>
-              <h1 className="responsive-headline">I am {resumeData.name}.</h1>
-            </Typing>
-            }
+            {this._renderTitle()}
             
-               
-               <h3 style={{color:'#fff', fontFamily:'sans-serif '}}>I am a {resumeData.role}.{resumeData.roleDescription}
-               </h3>
-               <h3 style={{color:'#F06000', fontFamily:'sans-serif ', fontWeight: 'bold'}}>You can play with voice commands, just click and say 'download' or 'go to about': </h3><li style={{display:'block'}} onClick={() => this.start() } className="fa-3x fa-mic"><i className="fa fa-microphone" style={{color: this.state.recording ? 'red':'white'}}/></li>
+            
+               <h3 style={{color:'#F06000', fontFamily:'sans-serif ', fontWeight: 'bold'}}>You can play with voice commands, just click on the microphone and say 'download' or 'go to about': </h3><li style={{display:'block'}} onClick={() => this.start() } className="fa-3x fa-mic"><i className="fa fa-microphone" style={{color: this.state.recording ? 'red':'white'}}/></li>
                <hr/>
                <ul className="social">
                   {
