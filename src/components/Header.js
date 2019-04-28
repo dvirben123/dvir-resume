@@ -114,7 +114,7 @@ export default class Header extends Component {
           {
             this.state.showMovie &&
             <div style={{width:'100%',  position: 'absolute', top: '0px'}} className={!this.state.showMovie?'fadeOut':'fadeIn'} >
-              <video autoPlay width="100%" height="100%">
+              <video playsinline autoPlay muted loop width="100%" height="100%">
                 <source src="video/dragon.mp4" type="video/mp4"/>
                 Your browser does not support the video tag.
               </video>
